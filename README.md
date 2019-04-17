@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Biochlor Web
 
-## Available Scripts
+[Biochlor](https://www.epa.gov/water-research/biochlor-natural-attenuation-decision-support-system) is a utility written by the EPA based on openly available analytical solutions to understanding the movement of groundwater contaminants and estimating plume size for further studies. This utility is critical to engineers in this field, however the software was written in `VBA` (about 5000 lines) and is very old and clunky to use. The image below shows the input screen for this Excel VBA app.
 
-In the project directory, you can run:
+Alongwith being old, there are various in built calculators : For example in the first window (Advection), you could enter the Seepage velocity or the other three parameters and click the `C` button to update the value.
 
-### `npm start`
+![alt text](https://img.informer.com/screenshots/539/539315_2.jpg)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In the past I have worked on other aspects of Web Development such as Database Systems, Node JS apis, etc. hence i wanted to focus on the skills I learnt from this class which included some new tricks in ES6 and mostly React and front end responsive design. Hence my goal with this application is to have a web version of the above excel application which is responsive, easy to use and has tons of help.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+[Click Here for the Web App](https://rfun.github.io/react-biochlor/)
 
-### `npm test`
+# Feature Highlights of Web App
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Mobile First Development
 
-### `npm run build`
+The first goal of the web application was to have a better looking UI, and more importantly support for mobile devices so that such an analysis could be performed out in the field without the need of a computer. This was achieved by using `React` and `Material-UI`.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A custom component for field input was created which includes validation as well.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Example Component : Advection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This app will cycle through multiple level of inputs hence my focus was to get a template component ready that I could reuse for other input sections. So I focused on getting one component (or rather one input) ready. This input can either be a single line input (if the switch is off) or if we move the switch over, it will accept three inputs, which if they pass validation will display the calculated value in another field.
 
-### `npm run eject`
+The calculators are separated into `utility` modules for ease of code management.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The first component can be easily referred to for other input sections from the excel form.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Future Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   Add converters for converting different input values
+-   Store Date with Firebase, User accounts and authorization to store previously done analysis
+-   Complete other inputs
+-   Add Graphing and results table
+-   Embed [React Joyride](https://github.com/gilbarbara/react-joyride) for teaching people how to use the application
+-   Add greek symbols for variables where required
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Time Spent
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+I had spent about an hour or project one and 2 hours on project two since it covered mostly topics I had experience with. For this project including setting up and deployment I spent about 15 hours. The learning curve for some of the things in react (figuring out how to call methods on a child component, styles in react) was a little long.
